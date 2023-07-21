@@ -1,3 +1,4 @@
+const file = require('fs');
 const inquirer = require('inquirer');
 const jest = require('jest');
 
