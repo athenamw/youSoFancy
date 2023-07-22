@@ -2,23 +2,23 @@ const file = require('fs');
 const inquirer = require('inquirer');
 const jest = require('jest');
 const svgBuilder = require('svg-builder');
-const { Circle, Square, Triangle } = require('./lib/masterShape');
-
-class svgImage {
-  constructor() {
-    this.contentCharac = '';
-    this.shapeChoice = '';
-  }
-  render() {
-    return ``;
-  }
-}
+const circle = require('./lib/circle');
+const square = require('./lib/square');
+const triangle = require('./lib/triangle');
 
 inquirer.prompt([
   {
     type: 'input',
     name: 'content',
     message: 'Pick three characters for your logo content.',
+    validate: (content) => {
+      if (content.length == 3) {
+        return true;
+      } else {
+        console.log('Invalid: enter 3 characters');
+        return false;
+      }
+    },
   },
   {
     type: 'input',
