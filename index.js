@@ -45,12 +45,14 @@ inquirer
     //Create logo
     if (logo == 'Square') {
       logo = new Square();
-      console.log('Square selected');
+      console.log('Square selected.');
     } else if (logo == 'Circle') {
       logo = new Circle();
-      console.log('Circle selected');
+      console.log('Circle selected.');
     } else if (logo == 'Triangle') {
       logo = new Triangle();
-      console.log('Triangle selected');
+      console.log('Triangle selected.');
+    } else {
+      console.log('Invalid shape.');
     }
   });
