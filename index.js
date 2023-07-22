@@ -33,7 +33,7 @@ inquirer
       type: 'list',
       name: 'shape',
       message: 'What shape do you want your logo?',
-      choices: ['circle', 'square', 'triangle'],
+      choices: ['Circle', 'Square', 'Triangle'],
     },
     {
       type: 'input',
@@ -43,16 +43,11 @@ inquirer
   ])
   .then((answers) => {
     //Create logo
-    if (logo == 'Square') {
-      logo = new Square();
-      console.log('Square selected.');
-    } else if (logo == 'Circle') {
+    if (logo === 'Circle') {
       logo = new Circle();
-      console.log('Circle selected.');
-    } else if (logo == 'Triangle') {
+    } else if (logo === 'Square') {
+      logo = new Square();
+    } else if (logo === 'Triangle') {
       logo = new Triangle();
-      console.log('Triangle selected.');
-    } else {
-      console.log('Invalid shape.');
     }
   });
