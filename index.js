@@ -1,13 +1,24 @@
 const file = require('fs');
 const inquirer = require('inquirer');
 const jest = require('jest');
+const svgBuilder = require('svg-builder');
+const { Circle, Square, Triangle } = require('./lib/masterShape');
+
+class svgImage {
+  constructor() {
+    this.contentCharac = '';
+    this.shapeChoice = '';
+  }
+  render() {
+    return ``;
+  }
+}
 
 inquirer.prompt([
   {
     type: 'input',
     name: 'content',
     message: 'Pick three characters for your logo content.',
-    maxlength: 3,
   },
   {
     type: 'input',
@@ -26,3 +37,5 @@ inquirer.prompt([
     message: 'What color would you like to fill the shape with? (color name or hexadecimal number)',
   },
 ]);
+// function to write to file.
+function writeToFile() {}
