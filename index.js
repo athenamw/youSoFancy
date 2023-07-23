@@ -6,7 +6,7 @@ const inquirer = require('inquirer');
 const square = require('./lib/square');
 const triangle = require('./lib/triangle');
 const circle = require('./lib/circle');
-const FILENAME = 'logo.svg';
+const FILENAME = './logo.svg';
 var logo;
 
 inquirer
@@ -51,6 +51,10 @@ inquirer
       logo = new triangle(answers.shapeColor, answers.fontColor, answers.content);
     }
 
-    //console.log(answers);
-    console.log(logo.drawShape());
+    // creates file
+    file.writeFile(FILENAME, logo.drawShape(), (err) => {
+      if (err) {
+        console.log(err);
+      }
+    });
   });
