@@ -2,10 +2,10 @@ const file = require('fs');
 const inquirer = require('inquirer');
 // const jest = require('jest');
 // const svgBuilder = require('svg-builder');
-const circle = require('./lib/circle');
+
 const square = require('./lib/square');
 const triangle = require('./lib/triangle');
-const Circle = require('./lib/circle');
+const circle = require('./lib/circle');
 const FILENAME = 'logo.svg';
 var logo;
 
@@ -43,11 +43,14 @@ inquirer
   ])
   .then((answers) => {
     //Create logo
-    if (logo === 'Circle') {
-      logo = new Circle();
-    } else if (logo === 'Square') {
-      logo = new Square();
-    } else if (logo === 'Triangle') {
-      logo = new Triangle();
+    if (answers.shape === 'Circle') {
+      logo = new circle(answers.shapeColor, answers.fontColor, answers.content);
+    } else if (answers.shape === 'Square') {
+      logo = new square(answers.shapeColor, answers.fontColor, answers.content);
+    } else if (answers.shape === 'Triangle') {
+      logo = new triangle(answers.shapeColor, answers.fontColor, answers.content);
     }
+
+    //console.log(answers);
+    console.log(logo.drawShape());
   });
