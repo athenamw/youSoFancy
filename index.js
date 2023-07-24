@@ -3,9 +3,9 @@ const inquirer = require('inquirer');
 // const jest = require('jest');
 // const svgBuilder = require('svg-builder');
 
-const square = require('./lib/square');
-const triangle = require('./lib/triangle');
-const circle = require('./lib/circle');
+const Square = require('./lib/square');
+const Triangle = require('./lib/triangle');
+const Circle = require('./lib/circle');
 const FILENAME = './logo.svg';
 var logo;
 
@@ -44,11 +44,11 @@ inquirer
   .then((answers) => {
     //Create logo
     if (answers.shape === 'Circle') {
-      logo = new circle(answers.shapeColor, answers.fontColor, answers.content);
+      logo = new Circle(answers.shapeColor, answers.fontColor, answers.content);
     } else if (answers.shape === 'Square') {
-      logo = new square(answers.shapeColor, answers.fontColor, answers.content);
+      logo = new Square(answers.shapeColor, answers.fontColor, answers.content);
     } else if (answers.shape === 'Triangle') {
-      logo = new triangle(answers.shapeColor, answers.fontColor, answers.content);
+      logo = new Triangle(answers.shapeColor, answers.fontColor, answers.content);
     }
 
     // creates file
