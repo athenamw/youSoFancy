@@ -1,8 +1,5 @@
 const file = require('fs');
 const inquirer = require('inquirer');
-// const jest = require('jest');
-// const svgBuilder = require('svg-builder');
-
 const Square = require('./lib/square');
 const Triangle = require('./lib/triangle');
 const Circle = require('./lib/circle');
